@@ -1,6 +1,7 @@
 // Page Navigation
 const navLinks = document.querySelectorAll('.nav-links li');
 const pages = document.querySelectorAll('.page');
+const cameraItems = document.querySelectorAll('.camera-item'); // Add this line
 
 function navigateToPage(pageId) {
     pages.forEach(page => {
@@ -22,6 +23,14 @@ function navigateToPage(pageId) {
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         const pageId = link.getAttribute('data-page');
+        navigateToPage(pageId);
+    });
+});
+
+// Add this: Handle camera item clicks
+cameraItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const pageId = item.getAttribute('data-page');
         navigateToPage(pageId);
     });
 });
@@ -124,7 +133,7 @@ if (analyticsCtx) {
                 },
                 x: {
                     grid: {
-                        color: 'rgba(255, 255, 255, 0.1)'
+                        color: 'rgba(255, corals255, 255, 0.1)'
                     },
                     ticks: {
                         color: 'rgba(255, 255, 255, 0.7)'
