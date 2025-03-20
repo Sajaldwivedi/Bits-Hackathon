@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrowdAI - AI-Powered Crowd Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <nav class="sidebar">
+            <div class="logo">CrowdAI</div>
+            <ul class="nav-links">
+                <li class="active" data-page="dashboard"><span class="icon">⊞</span> Dashboard</li>
+                <li data-page="live-feeds"><span class="icon">📷</span> Live Feeds</li>
+                <li data-page="camera-management"><span class="icon">⚙️</span> Camera Management</li>
+                <li data-page="alerts"><span class="icon">🔔</span> Alerts</li>
+                <li data-page="analytics"><span class="icon">📊</span> Analytics</li>
+            </ul>
+            <div class="theme-toggle">🌙</div>
+        </nav>
+        
+        <main class="content">
+            <div id="dashboard" class="page active">
+                <header class="top-bar">
+                    <h1>AI-Powered Crowd Monitoring</h1>
+                </header>
+
+                <div class="dashboard">
+                    <div class="dashboard-header">
+                        <h2>Real-Time Crowd Monitoring</h2>
+                        <p class="subtitle">AI-powered analytics • Last updated: <span id="lastUpdate">11:36:18 AM</span></p>
+                        <button class="refresh-btn">↻ Refresh Data</button>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>TOTAL VISITORS</h3>
+                            <div class="stat-value">2,810</div>
+                            <p>Live count updating in real-time</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>CURRENT DENSITY</h3>
+                            <div class="stat-value">66%</div>
+                            <div class="density-tag">Moderate</div>
+                            <p>Occupancy level monitored by AI</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>ACTIVE ALERTS</h3>
+                            <div class="stat-value alert">2</div>
+                            <p>Monitoring for anomalies</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>ACTIVE CAMERAS</h3>
+                            <div class="stat-value">12/14</div>
+                            <p>86% operational</p>
+                        </div>
+                    </div>
+
+                    <div class="tabs">
+                        <button class="tab active">Overview</button>
+                        <button class="tab">Heatmap</button>
+                        <button class="tab">Cameras</button>
+                        <button class="tab">AI Insights</button>
+                    </div>
+
+                    <div class="charts-grid">
+                        <div class="chart-card">
+                            <div class="ai-progress">
+                                <div class="progress-ring">
+                                    <svg width="200" height="200">
+                                        <circle class="progress-ring-circle" cx="100" cy="100" r="90"></circle>
+                                    </svg>
+                                    <div class="progress-content">
+                                        <span class="percentage">97%</span>
+                                        <span class="label">/100</span>
+                                        <p>AI Processing</p>
+                                        <small>Real-time analysis</small>
+                                    </div>
+                                </div>
+                                <div class="ai-stats">
+                                    <div class="ai-stat">
+                                        <span class="label">Object</span>
+                                        <span class="value">Detection</span>
+                                    </div>
+                                    <div class="ai-stat">
+                                        <span class="label">Motion</span>
+                                        <span class="value">Tracking</span>
+                                    </div>
+                                    <div class="ai-stat">
+                                        <span class="label">Behavior</span>
+                                        <span class="value">Analysis</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Crowd Density Over Time</h3>
+                            <p class="subtitle">AI-enhanced real-time monitoring</p>
+                            <div class="chart-container" style="position: relative; height: 300px;">
+                                <canvas id="densityChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alerts-section">
+                        <h3>Recent Alerts</h3>
+                        <p class="subtitle">AI-detected anomalies</p>
+                        <div class="alerts-list">
+                            <div class="alert-item high">
+                                <span class="alert-icon">⚠️</span>
+                                <div class="alert-content">
+                                    <h4>Overcrowding Detected</h4>
+                                    <p>Main Entrance</p>
+                                </div>
+                                <span class="alert-time">2 minutes ago</span>
+                                <span class="alert-priority">high</span>
+                            </div>
+                            <div class="alert-item medium">
+                                <span class="alert-icon">⚠️</span>
+                                <div class="alert-content">
+                                    <h4>Unusual Movement Pattern</h4>
+                                    <p>Food Court</p>
+                                </div>
+                                <span class="alert-time">15 minutes ago</span>
+                                <span class="alert-priority">medium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="live-feeds" class="page">
+                <h1>Live Camera Feeds</h1>
+                <div class="camera-grid">
+                    <div class="camera-feed">
+                        <h3>Main Entrance</h3>
+                        <div class="feed-placeholder">Camera Feed 1</div>
+                    </div>
+                    <div class="camera-feed">
+                        <h3>Food Court</h3>
+                        <div class="feed-placeholder">Camera Feed 2</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="camera-management" class="page">
+                <h1>Camera Management</h1>
+                <div class="camera-list">
+                    <div class="camera-item">
+                        <h3>Camera 1 - Main Entrance</h3>
+                        <p>Status: Online</p>
+                    </div>
+                    <div class="camera-item">
+                        <h3>Camera 2 - Food Court</h3>
+                        <p>Status: Online</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="alerts" class="page">
+                <h1>Alert Center</h1>
+                <div class="alerts-dashboard">
+                    <div class="alert-filters">
+                        <button class="active">All Alerts</button>
+                        <button>High Priority</button>
+                        <button>Medium Priority</button>
+                        <button>Low Priority</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="analytics" class="page">
+                <h1>Analytics Dashboard</h1>
+                <div class="analytics-content">
+                    <div class="chart-container" style="position: relative; height: 400px;">
+                        <canvas id="analyticsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
