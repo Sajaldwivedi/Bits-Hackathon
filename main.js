@@ -191,3 +191,30 @@ const progress = 97;
 
 circle.style.strokeDasharray = `${circumference} ${circumference}`;
 circle.style.strokeDashoffset = circumference - (progress / 100) * circumference;
+// Replace the existing filter code with this
+// Alert Filter Buttons (scoped to #alerts page only)
+const filterButtons = document.querySelectorAll('#alerts .filter-btn');
+const alertItems = document.querySelectorAll('#alerts .alert-item'); // Scope to #alerts
+
+function filterAlerts(filter) {
+    alertItems.forEach(item => {
+        const priority = item.getAttribute('data-priority');
+        if (filter === 'all' || priority === filter) {
+            item.style.display = 'block'; // Show matching alerts
+        } else {
+            item.style.display = 'none'; // Hide non-matching alerts
+        }
+    });
+}
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.getAttribute('data-filter');
+        filterAlerts(filter);
+    });
+});
+
+// Initialize with "All Alerts" active
+filterAlerts('all');

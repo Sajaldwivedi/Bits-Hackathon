@@ -194,10 +194,39 @@
                 <h1>Alert Center</h1>
                 <div class="alerts-dashboard">
                     <div class="alert-filters">
-                        <button class="active">All Alerts</button>
-                        <button>High Priority</button>
-                        <button>Medium Priority</button>
-                        <button>Low Priority</button>
+                        <button class="filter-btn active" data-filter="all">All Alerts</button>
+                        <button class="filter-btn" data-filter="high">High Priority</button>
+                        <button class="filter-btn" data-filter="medium">Medium Priority</button>
+                        <button class="filter-btn" data-filter="low">Low Priority</button>
+                    </div>
+                    <div class="alerts-list">
+                        <div class="alert-item high" data-priority="high">
+                            <span class="alert-icon">⚠️</span>
+                            <div class="alert-content">
+                                <h4>Overcrowding Detected</h4>
+                                <p>Main Entrance</p>
+                            </div>
+                            <span class="alert-time">2 minutes ago</span>
+                            <span class="alert-priority">high</span>
+                        </div>
+                        <div class="alert-item medium" data-priority="medium">
+                            <span class="alert-icon">⚠️</span>
+                            <div class="alert-content">
+                                <h4>Unusual Movement Pattern</h4>
+                                <p>Food Court</p>
+                            </div>
+                            <span class="alert-time">15 minutes ago</span>
+                            <span class="alert-priority">medium</span>
+                        </div>
+                        <div class="alert-item low" data-priority="low">
+                            <span class="alert-icon">⚠️</span>
+                            <div class="alert-content">
+                                <h4>Minor Obstruction</h4>
+                                <p>Parking Lot</p>
+                            </div>
+                            <span class="alert-time">30 minutes ago</span>
+                            <span class="alert-priority">low</span>
+                        </div>
                     </div>
                 </div>
             </div>
